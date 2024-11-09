@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catcher - Track Your Bus Live</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Smooth Scroll Function
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Toggle Section Display
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+            document.querySelector(section).style.display = 'block';
+        }
+
+        window.onload = function() {
+            showSection('.hero-section');
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="./images/logo.png" alt="CATCHER Logo" style="width: 65px; margin-right: 3px;">
+            <span>CATCHER</span>
+        </div>
+        <nav class="nav-links">
+            <a onclick="showSection('.hero-section'); smoothScroll('.hero-section')">Home</a>
+            <a onclick="showSection('.city-list-section'); smoothScroll('.city-list-section')">Select City</a>
+            <a onclick="showSection('.bus-finder-section'); smoothScroll('.bus-finder-section')">Find Bus</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section section">
+        <div class="hero-image">
+            <img src="./images/BUS.png" alt="Live Bus Tracking" />
+        </div>
+        <div class="hero-text">
+            <span class="highlight">Never Miss Your Bus Again</span>
+            <h1>Track Your Bus Live</h1>
+            <p>Take control of your daily travel by knowing the live location and arrival time of your bus. Plan exactly when to leave for the bus stop and never wait again.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- City List Section -->
+    <section class="city-list-section section" style="display: none;">
+        <div class="city-list-container">
+            <h2>Select Your City</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Search city">
+            </div>
+            <ul class="city-list">
+                <li>Coimbatore</li>
+                <li>Chennai</li>
+                <li>Salem</li>
+                <li>Namakkal</li>
+                <li>Karur</li>
+                <li>Madurai</li>
+                <li>Tirunelveli</li>
+                <li>Dindigul</li>
+                <li>Trichy</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Bus Finder Section -->
+    <section class="bus-finder-section section" style="display: none;">
+        <div class="bus-finder">
+            <h2>Nearest Bus Stop</h2>
+            <div class="bus-stop">
+                <div>
+                    <h3>North Coimbatore</h3>
+                    <p>Next Buses</p>
+                </div>
+                <p>3 min</p>
+            </div>
+            <div class="bus-stop">
+                <p>SNS Via Coimbatore</p>
+                <p class="bus-time">08:41 PM</p>
+            </div>
+            <div class="bus-stop">
+                <p>45C</p>
+                <p class="bus-time">09:02 PM</p>
+            </div>
+            <div class="see-all">
+                <a href="#">See all buses</a>
+            </div>
+        </div>
+
+        <!-- Map Placeholder Section -->
+        <div class="section map-placeholder">
+            Buses around you (Map)
+        </div>
+    </section>
+
+</body>
+</html>
